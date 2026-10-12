@@ -5,3 +5,7 @@
 /* Compact, independent photo columns; photographs remain uncropped. */
 .gallery{display:grid;grid-template-columns:1fr 1fr;max-width:720px;gap:28px;margin-top:28px}.photo-column{display:flex;flex-direction:column;gap:28px;min-width:0}.photo img{height:200px;width:100%;object-fit:contain;background:#f5f6f4}.photo .photo-title{font-size:15px;line-height:1.5;margin-top:10px}.site:has(.gallery) main{padding-top:40px}.site:has(.gallery) h1{font-size:38px;margin-bottom:24px}
 @media(max-width:560px){.gallery{display:flex;flex-direction:column;gap:28px}.photo-column{display:contents}.photo img{height:240px}.photo .photo-title{font-size:16px}}
+
+/* Larger photographs at their natural proportions, with no surrounding frame. */
+.gallery{max-width:860px;gap:36px}.photo-column{gap:36px}.photo img{width:auto;height:auto;max-width:100%;max-height:320px;object-fit:initial;background:transparent;margin:0 auto}.photo .photo-title{font-size:16px;margin-top:12px}
+@media(max-width:560px){.photo img{width:100%;height:auto;max-height:none}.gallery{gap:30px}.photo .photo-title{font-size:16px}}
