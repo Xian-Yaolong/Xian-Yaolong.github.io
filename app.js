@@ -28,6 +28,16 @@ const photos = [
     "src": "china-myanmar-fieldwork.jpg",
     "title": "Fieldwork beneath Open Skies on the China–Myanmar Border",
     "alt": "Working on a laptop beside green fields during fieldwork on the China–Myanmar border."
+  },
+  {
+    "src": "busan-alleys.jpg",
+    "title": "Wandering through the Alleys of Busan",
+    "alt": "Walking through a narrow alley between colorful buildings in Busan."
+  },
+  {
+    "src": "bus-to-hanoi.jpg",
+    "title": "On the Bus to Hanoi",
+    "alt": "Working on a laptop aboard a bus bound for Hanoi."
   }
 ];
 const themes = ['classic', 'paper', 'sidebar'];
