@@ -9,3 +9,5 @@
 /* Larger photographs at their natural proportions, with no surrounding frame. */
 .gallery{max-width:860px;gap:36px}.photo-column{gap:36px}.photo img{width:auto;height:auto;max-width:100%;max-height:320px;object-fit:initial;background:transparent;margin:0 auto}.photo .photo-title{font-size:16px;margin-top:12px}
 @media(max-width:560px){.photo img{width:100%;height:auto;max-height:none}.gallery{gap:30px}.photo .photo-title{font-size:16px}}
+
+.photo-caption-zh{display:block;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;font-size:14px;line-height:1.65;color:var(--muted);margin:5px 0 0;letter-spacing:.015em}#photo-detail .photo-title{margin-bottom:0}#photo-detail .photo-caption-zh{margin-top:6px}@media(max-width:560px){.photo-caption-zh{font-size:14px}}

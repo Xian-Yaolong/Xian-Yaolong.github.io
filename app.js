@@ -2,42 +2,50 @@ const photos = [
   {
     "src": "taal-volcano.jpg",
     "title": "By Donkey along the Slopes of Taal Volcano",
-    "alt": "Riding a donkey on a trail at Taal Volcano in the Philippines."
+    "alt": "Riding a donkey on a trail at Taal Volcano in the Philippines.",
+    "captionZh": "我在塔尔火山骑驴"
   },
   {
     "src": "thai-myanmar-border.jpg",
     "title": "An Injured Foot and a Helping Hand on the Thai–Myanmar Border",
-    "alt": "Being carried across a shallow stream after a foot injury on the Thai–Myanmar border."
+    "alt": "Being carried across a shallow stream after a foot injury on the Thai–Myanmar border.",
+    "captionZh": "我在泰缅边境过河"
   },
   {
     "src": "kathmandu.jpg",
     "title": "Looking Out over Kathmandu",
-    "alt": "Looking toward the hills and evening sky above Kathmandu."
+    "alt": "Looking toward the hills and evening sky above Kathmandu.",
+    "captionZh": "我在加德满都罚站"
   },
   {
     "src": "western-sichuan.jpg",
     "title": "Climbing above the Clouds in Western Sichuan",
-    "alt": "Standing on a frosty mountain slope above the clouds in western Sichuan."
+    "alt": "Standing on a frosty mountain slope above the clouds in western Sichuan.",
+    "captionZh": "我在川西观云海"
   },
   {
     "src": "lapland.jpg",
     "title": "A Barefoot Stroll through Lapland",
-    "alt": "Walking barefoot across the snow in Lapland."
+    "alt": "Walking barefoot across the snow in Lapland.",
+    "captionZh": "我在拉普兰踏雪"
   },
   {
     "src": "china-myanmar-fieldwork.jpg",
     "title": "Fieldwork beneath Open Skies on the China–Myanmar Border",
-    "alt": "Working on a laptop beside green fields during fieldwork on the China–Myanmar border."
+    "alt": "Working on a laptop beside green fields during fieldwork on the China–Myanmar border.",
+    "captionZh": "我在中缅边境摆拍"
   },
   {
     "src": "busan-alleys.jpg",
     "title": "Wandering through the Alleys of Busan",
-    "alt": "Walking through a narrow alley between colorful buildings in Busan."
+    "alt": "Walking through a narrow alley between colorful buildings in Busan.",
+    "captionZh": "我在釜山上坡"
   },
   {
     "src": "bus-to-hanoi.jpg",
     "title": "On the Bus to Hanoi",
-    "alt": "Working on a laptop aboard a bus bound for Hanoi."
+    "alt": "Working on a laptop aboard a bus bound for Hanoi.",
+    "captionZh": "我在去河内大巴上求职"
   }
 ];
 const themes = ['classic', 'paper', 'sidebar'];
@@ -68,11 +76,11 @@ function render() {
   if (page === 'commentary') main.innerHTML = `<h1>Commentary</h1><div class="publication-list">${cvContent.writing.map(citation).join('')}</div>`;
   if (page === 'teaching') main.innerHTML = `<h1>Teaching</h1><div class="publication-list"><article class="entry"><span class="year">2026<br>2027</span><div><h3>China’s Foreign Policy: States, Parties, and Non-State Armed Groups</h3><p>Master’s students · Goethe University Frankfurt</p><p class="muted">Winter semester 2026/27</p></div></article><article class="entry"><span class="year">2024</span><div><h3>Workshop on Human Rights and Peacebuilding</h3><p>MA students in European Studies · Ateneo de Manila University</p><p class="muted">October 2024</p></div></article></div>`;
   if (page === 'elsewhere') {
-    const photoCard = (photo, i) => `<button class="photo" data-photo="${i}" style="order:${i}" aria-label="View photo: ${escapeHtml(photo.title)}"><img src="${photo.src}" alt="${escapeHtml(photo.alt)}" loading="lazy" decoding="async"><span class="photo-title">${escapeHtml(photo.title)}</span></button>`;
+    const photoCard = (photo, i) => `<button class="photo" data-photo="${i}" style="order:${i}" aria-label="View photo: ${escapeHtml(photo.title)}"><img src="${photo.src}" alt="${escapeHtml(photo.alt)}" loading="lazy" decoding="async"><span class="photo-title">${escapeHtml(photo.title)}</span><span class="photo-caption-zh" lang="zh-CN">${escapeHtml(photo.captionZh)}</span></button>`;
     main.innerHTML = `<h1>Elsewhere</h1><div class="gallery">${[0, 1].map(column => `<div class="photo-column">${photos.map((photo, i) => i % 2 === column ? photoCard(photo, i) : '').join('')}</div>`).join('')}</div>`;
     main.querySelectorAll('[data-photo]').forEach(b => b.onclick = () => {
       const photo = photos[Number(b.dataset.photo)];
-      document.querySelector('#photo-detail').innerHTML = `<img class="full-photo" src="${photo.src}" alt="${escapeHtml(photo.alt)}"><p class="photo-title">${escapeHtml(photo.title)}</p>`;
+      document.querySelector('#photo-detail').innerHTML = `<img class="full-photo" src="${photo.src}" alt="${escapeHtml(photo.alt)}"><p class="photo-title">${escapeHtml(photo.title)}</p><p class="photo-caption-zh" lang="zh-CN">${escapeHtml(photo.captionZh)}</p>`;
       document.querySelector('dialog').showModal();
     });
   }
